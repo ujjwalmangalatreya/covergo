@@ -1,4 +1,4 @@
-import { Page,test } from "@playwright/test";
+import { Page, test } from "@playwright/test";
 import LoginPageElement from "./loginPageElement";
 
 class LoginPageActions {
@@ -26,7 +26,7 @@ class LoginPageActions {
           await test.step('Click login button', async () => {
                await this.loginPageElement.loginSubmitButton.click();
           });
-     } 
+     }
 }
 
 export default LoginPageActions;

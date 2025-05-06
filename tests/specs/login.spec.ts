@@ -8,10 +8,23 @@ test.describe('Login Functionality', () => {
     await page.goto('/');
     login = new LoginPageActions(page);
   });
-
   test('should log in with valid credentials', async () => {
     await login.enterUserName('Admin');
     await login.enterPassword('admin123');
     await login.clickLogin();
+  });
+  test('should not log in with invalid username', async ({page}) => {
+    await login.enterUserName('InvalidUser');
+    await login.enterPassword('admin123');
+    await login.clickLogin();
+    //TODO: error message assertion.
+    await expect(page.locator('.error-message')).toContainText('Invalid credentials');
+  });
+  test('should not log in with invalid password', async ({page}) => {
+    await login.enterUserName('Admin');
+    await login.enterPassword('wrongpassword');
+    await login.clickLogin();
+    //TODO: error message assertion.
+    await expect(page.locator('.error-message')).toContainText('Invalid credentials');
   });
 });

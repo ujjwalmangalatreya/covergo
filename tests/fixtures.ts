@@ -9,12 +9,13 @@ type OrangeHRMFixtures = {
 };
 
 export const test = base.extend<OrangeHRMFixtures>({
-     loginPage: async ({ httpCredentials, page }, use) => {
+     loginPage: async ({ httpCredentials, page, baseURL }, use) => {
           await page.goto("/");
           const loginPage = new LoginPageActions(page);
           await loginPage.enterUserName(httpCredentials?.username);
           await loginPage.enterPassword(httpCredentials?.password);
           await loginPage.clickLogin()
           await use(loginPage);
+          //TODO: Logout here.
      },
 });
