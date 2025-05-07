@@ -22,7 +22,7 @@ class DashboardPageActions {
      async gotoPIMLink() {
           await test.step(`Click on pim link`,async () => {
                await this.dashboardElements.pimLink.click();
-               await this.page.waitForTimeout(5000);
+               await this.page.waitForTimeout(6000);
           })
      }
 
