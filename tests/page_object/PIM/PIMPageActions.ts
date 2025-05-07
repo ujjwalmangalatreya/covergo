@@ -1,7 +1,7 @@
-import { Page, test,expect } from "@playwright/test";
+import { Page, test, expect } from "@playwright/test";
 import PIMPageElements from "./PIMPageElements";
 import path from "path";
-import testData from "../../fixtures/testData.json";
+import testData from "../../data/testData.json";
 
 class PIMPageActions {
      private page: Page;
@@ -44,10 +44,6 @@ class PIMPageActions {
                await expect(this.pimElements.successMessage).toBeVisible();
           });
      }
-
-     
-
-
 }
 
 export default PIMPageActions;

@@ -5,9 +5,9 @@ import fs from 'fs';
 
 export function genarateUniqueEmployeeData() {
      const timeStamp = Date.now();
-     const uniqueFirstName = `${testData.firstName}_${timeStamp}`;
-     const uniqueMiddleName = `${testData.middleName}_${timeStamp}`;
-     const uniqueLastName = `${testData.lastName}_${timeStamp}`;
+     const uniqueFirstName = `Ujjwal_${timeStamp}`;
+     const uniqueMiddleName = `Mangal_${timeStamp}`;
+     const uniqueLastName = `Atreya_${timeStamp}`;
      const uniqueEmployeeID = Math.floor(1000 + Math.random() * 9000);
 
      const updatedData = {
@@ -19,7 +19,7 @@ export function genarateUniqueEmployeeData() {
      }
 
      try {
-          const filePath = path.join(process.cwd()+'/tests/fixtures/testData.json');
+          const filePath = path.join(process.cwd()+'/tests/data/testData.json');
           fs.writeFileSync(filePath, JSON.stringify(updatedData, null, 2));  
           console.log("Test data genarated and written to testData.json");
      } catch (err) {
