@@ -1,13 +1,16 @@
-import { Page, test } from "@playwright/test";
+import { expect, Page, test } from "@playwright/test";
 import LoginPageElement from "./loginPageElement";
+import DashboardPageActions from "../dashboard/dashboardActions";
 
 class LoginPageActions {
      private page: Page;
      private loginPageElement: LoginPageElement;
+     private dashboardActions: DashboardPageActions;
 
      constructor(page: Page) {
           this.page = page;
           this.loginPageElement = new LoginPageElement(page);
+          this.dashboardActions = new DashboardPageActions(page);
      }
 
      async enterUserName(username: string) {
@@ -26,6 +29,12 @@ class LoginPageActions {
           await test.step('Click login button', async () => {
                await this.loginPageElement.loginSubmitButton.click();
           });
+     }
+     async verifySuccessfulLogin(){
+          await test.step("Verifying Successful Login",async () => {
+               let currentUrl = await this.dashboardActions.getDashboardUrl();
+               expect(currentUrl).toContain("/dashboard")
+          })
      }
 }
 

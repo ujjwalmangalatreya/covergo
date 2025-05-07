@@ -12,6 +12,7 @@ test.describe('Login Functionality', () => {
     await login.enterUserName('Admin');
     await login.enterPassword('admin123');
     await login.clickLogin();
+    await login.verifySuccessfulLogin();
   });
   test('should not log in with invalid username', async ({page}) => {
     await login.enterUserName('InvalidUser');
