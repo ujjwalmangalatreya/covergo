@@ -11,15 +11,18 @@ class DashboardPageActions {
      }
 
      async getDashboardUrl() {
+          let currentURL='';
           await test.step(`Get current url dashboard`, async () => {
-               let currentURL = await this.page.url();
-               return currentURL;
+               await this.page.waitForTimeout(1000);
+               currentURL = await this.page.url();
           });
+          return currentURL;
      }
 
      async gotoPIMLink() {
           await test.step(`Click on pim link`,async () => {
                await this.dashboardElements.pimLink.click();
+               await this.page.waitForTimeout(5000);
           })
      }
 

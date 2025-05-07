@@ -1,12 +1,14 @@
 
 
 import { test as base, expect } from "@playwright/test";
-import LoginPageActions from "./page_object/login/loginPageActions";
-import DashboardPageActions from "./page_object/dashboard/dashboardActions";
+import LoginPageActions from "../page_object/login/loginPageActions";
+import DashboardPageActions from "../page_object/dashboard/dashboardActions";
+import PIMPageActions from "../page_object/PIM/PIMPageActions";
 
 type OrangeHRMFixtures = {
      loginPage: LoginPageActions;
      dashboardPage: DashboardPageActions;
+     pimPage: PIMPageActions;
      httpCredentials: { username: string; password: string };
 };
 
@@ -23,5 +25,9 @@ export const test = base.extend<OrangeHRMFixtures>({
      dashboardPage: async ({ page }, use) => {
           const dashboardPage = new DashboardPageActions(page);
           await use(dashboardPage);
+     },
+     pimPage: async ({ page }, use) => {
+          const pimPage = new PIMPageActions(page);
+          await use(pimPage);
      }
 });

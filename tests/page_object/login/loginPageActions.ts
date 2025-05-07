@@ -30,10 +30,10 @@ class LoginPageActions {
                await this.loginPageElement.loginSubmitButton.click();
           });
      }
-     async verifySuccessfulLogin(){
-          await test.step("Verifying Successful Login",async () => {
+     async verifySuccessfulLogin() {
+          await test.step("Verifying Successful Login", async () => {
                let currentUrl = await this.dashboardActions.getDashboardUrl();
-               expect(currentUrl).toContain("/dashboard")
+               expect(currentUrl).toContain("/dashboard/index")
           })
      }
 }
