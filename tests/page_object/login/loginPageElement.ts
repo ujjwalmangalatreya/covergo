@@ -6,6 +6,7 @@ class LoginPageElement {
      userNameInputField: Locator;
      passwordInputField: Locator;
      loginSubmitButton: Locator;
+     
      constructor(page: Page) {
           this.page = page;
           this.userNameInputField = page.locator('[name="username"]');

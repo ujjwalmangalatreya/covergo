@@ -28,13 +28,13 @@ test.describe('PIM', () => {
           await pimPage.verifyNameInPersonalDetails();
      });
 
-     test("Test to cancel deletion the created employee", async({loginPage,dashboardPage,pimPage}) => {
+     test("Test to cancel deletion the created employee", async ({ loginPage, dashboardPage, pimPage }) => {
           await dashboardPage.gotoPIMLink();
           await pimPage.searchByEmployeeName();
           await pimPage.clickSearchButton();
           await pimPage.clickDeleteButton();
           await pimPage.clickNoCancelButton();
           await pimPage.verifyDeletionIsCancelled();
-     })
+     });
 
 });
