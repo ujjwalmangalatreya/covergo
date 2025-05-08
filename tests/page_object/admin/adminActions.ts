@@ -33,7 +33,6 @@ class AdminPageActions {
                await this.page.waitForTimeout(3000);
                await this.adminElement.employeeNameInputFiled.press('Enter');
                await this.adminElement.employeeSearchResult.click();
-               await this.adminElement.saveButton.click();
 
           });
      }
@@ -44,6 +43,7 @@ class AdminPageActions {
      }
      async clickSaveButton() {
           await test.step("Click Save BUtton", async () => {
+               await this.page.waitForTimeout(3000);
                await this.adminElement.saveButton.click();  
           });
      }
@@ -73,6 +73,7 @@ class AdminPageActions {
      async clickEditIcon() {
           await test.step("Click on edid icon", async () => {
                await this.adminElement.editIcon.click();
+               await this.page.waitForTimeout(3000);
           })
      }
      async clickDeleteIcon() {
@@ -83,7 +84,8 @@ class AdminPageActions {
 
      async editUserName() {
           await test.step("Edit Username", async () => {
-               await this.adminElement.userNameInputField.clear();
+               await this.adminElement.userNameInputField.click({ force: true });
+               await this.adminElement.userNameInputField.evaluate((input: HTMLInputElement) => input.value = '');
                await this.adminElement.userNameInputField.fill(testData.middleName);
           })
      }

@@ -39,7 +39,7 @@ class AdminElement {
           this.saveButton = page.getByRole("button", { name: "Save" });
           this.successMessage = page.getByText('Successfully Saved');
           this.employeeSearchResult = page.locator('//div[@role="listbox"]//div[@role="option"]')
-          this.usernameSearchTextField = page.getByRole("textbox", { name: "" });
+          this.usernameSearchTextField = page.locator('(//div[@class="oxd-input-group oxd-input-field-bottom-space"]//input)[1]');
           this.searchButton = page.getByRole("button", { name: "Search" });
           this.tableContent = page.locator('//div[@class="oxd-table-card"]//div[@role="row"]/div[2]');
           this.editIcon = page.locator('(//div[@class="oxd-table-cell-actions"]/button)[2]');

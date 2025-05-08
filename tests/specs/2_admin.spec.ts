@@ -40,7 +40,4 @@ test.describe('Admin', () => {
           await adminPage.verifySuccessDeleteMessage();
 
      });
-
-    
-
 });
