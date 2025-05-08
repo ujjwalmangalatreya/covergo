@@ -26,9 +26,8 @@ test.describe('Admin', () => {
           await adminPage.clickEditIcon();
           await adminPage.editUserName();
           await adminPage.clickSaveButton();
-          await adminPage.searchByUserNameEdited();
-          await adminPage.clickSearch();
-          await adminPage.verifyDataInTable();
+          await adminPage.verifySuccessUpadtedMessage();
+          
 
      });
      test("Verify if admin username is able to delete", async ({ loginPage, dashboardPage, adminPage }) => {
@@ -37,7 +36,7 @@ test.describe('Admin', () => {
           await adminPage.clickSearch();
           await adminPage.verifyDataInTable();
           await adminPage.clickDeleteIcon();
+          await adminPage.clickYesDeleteButton();
           await adminPage.verifySuccessDeleteMessage();
-
      });
 });

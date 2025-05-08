@@ -105,6 +105,11 @@ class AdminPageActions {
                await expect(this.adminElement.successDeleteMessage).toBeVisible();
           })
      }
+     async verifySuccessUpadtedMessage() {
+          await test.step("Verify success updated message", async () => {
+               await expect(this.adminElement.successUpdatedMessage).toBeVisible(); 
+          })
+     }
 
 
 }

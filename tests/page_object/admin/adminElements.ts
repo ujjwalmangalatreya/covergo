@@ -22,6 +22,7 @@ class AdminElement {
      deleteIcon: Locator;
      yesDeleteButtom: Locator;
      successDeleteMessage: Locator;
+     successUpdatedMessage: Locator;
      
      
     
@@ -46,6 +47,7 @@ class AdminElement {
           this.deleteIcon = page.locator('(//div[@class="oxd-table-cell-actions"]/button)[1]');
           this.yesDeleteButtom = page.locator('(//div[@class="orangehrm-modal-footer"]/button)[2]');
           this.successDeleteMessage = page.getByText('Successfully Deleted');
+          this.successUpdatedMessage = page.getByText('Successfully Updated')
 
      }
 }
