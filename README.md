@@ -1,4 +1,4 @@
- CoverGo Playwright Test Automation
+ Playwright Test Automation
 
 This project is an end-to-end test automation framework for CoverGo, built using [Playwright](https://playwright.dev/) with TypeScript.  
 It uses the Page Object Model (POM), dynamic test data, Allure reporting, and clean project structure to ensure scalable and maintainable automation.
