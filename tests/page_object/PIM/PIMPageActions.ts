@@ -76,8 +76,11 @@ class PIMPageActions {
 
      async verifyNameInPersonalDetails() {
           await test.step("Verify Name in personal details page", async () => {
-               const fullName = `${testData.firstName}${testData.lastName}`;
-               await expect(this.pimElements.personalDetailsName.innerText()).toContain(fullName);
+               await this.page.waitForTimeout(3000);
+               const fullName = `${testData.firstName} ${testData.lastName}`;
+               const actualText = await this.pimElements.personalDetailsName.innerText();
+               console.log(actualText);
+               await expect(actualText).toContain(fullName);
           });
      }
      async verifyDeletePopUp() {
@@ -102,6 +105,8 @@ class PIMPageActions {
                await expect(this.pimElements.tableContent).toContainText(testData.firstName);
           })
      }
+
+     
 }
 
 export default PIMPageActions;

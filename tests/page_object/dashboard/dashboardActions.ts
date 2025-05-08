@@ -26,6 +26,12 @@ class DashboardPageActions {
                await this.page.waitForTimeout(6000);
           })
      }
+     async gotoAdminLink() {
+          await test.step(`Click on admin link`, async () => {
+               await this.dashboardElements.adminLink.click();
+               await this.page.waitForTimeout(6000);
+          })
+     }
 
      async verifyAllSideNavMenu() {
           await test.step("Verify all side nav menu items", async () => {
