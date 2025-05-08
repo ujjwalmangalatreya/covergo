@@ -14,7 +14,7 @@ It uses the Page Object Model (POM), dynamic test data, Allure reporting, and cl
 
 ### Running the test
 
-- Run command "npx playwright test"
+- Run command "npx playwright test --headed" for headed mode
 
 ### viewing the allure report
 
