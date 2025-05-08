@@ -60,6 +60,7 @@ class PIMPageActions {
 
      async verifyEmployeeIsListed() {
           await test.step("Verify Employee is liste in the list", async () => {
+               await this.pimElements.tableContent.waitFor({ state: 'visible' });
                await expect(this.pimElements.tableContent).toContainText(testData.firstName);
           })
      }
@@ -77,6 +78,7 @@ class PIMPageActions {
      async verifyNameInPersonalDetails() {
           await test.step("Verify Name in personal details page", async () => {
                await this.page.waitForTimeout(3000);
+               await this.pimElements.personalDetailsName.waitFor({state : 'visible'})
                const fullName = `${testData.firstName} ${testData.lastName}`;
                const actualText = await this.pimElements.personalDetailsName.innerText();
                console.log(actualText);
