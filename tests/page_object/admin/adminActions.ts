@@ -29,7 +29,7 @@ class AdminPageActions {
                await this.adminElement.userNameInputField.fill(testData.lastName);
                await this.adminElement.passwordInputField.fill(testData.middleName);
                await this.adminElement.confirmPasswordField.fill(testData.middleName);
-               await this.adminElement.employeeNameInputFiled.fill("123445 34 444444");
+               await this.adminElement.employeeNameInputFiled.fill(testData.firstName);
                await this.page.waitForTimeout(3000);
                await this.adminElement.employeeNameInputFiled.press('Enter');
                await this.adminElement.employeeSearchResult.click();
